@@ -7,6 +7,7 @@ BASE = "http://127.0.0.1:4000/"
 
 # response = requests.patch(BASE + "2", {"txt": "whatthefuck"})
 # print(response.json())
+BASE = 'http://hoangtranminerva.pythonanywhere.com/'
 
 import pandas as pd
 import random
