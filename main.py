@@ -10,7 +10,7 @@ from svm_predict import predict
 
 app = Flask(__name__)
 api = Api(app)
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
+# app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
 # db = SQLAlchemy(app)
 # print("line12")
 # class News_model(db.Model):
