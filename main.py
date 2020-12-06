@@ -8,7 +8,7 @@ from flask_sqlalchemy import SQLAlchemy
 # from bert_predict import predict
 from svm_predict import predict
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='./build', static_url_path='/')
 api = Api(app)
 # app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
 # db = SQLAlchemy(app)
@@ -19,7 +19,7 @@ api = Api(app)
 #     News_out = db.Column(db.String, nullable = False)
 
 #     def __repr__(self):
-#         return f"News(News_id={self.News_id}, News_url={self.News_url}, News_out={self.News_out})" 
+#         return f"News(News_id={self.News_id}, News_url={self.News_url}, News_out={self.News_out})"
 
 # db.create_all() # run_once
 
@@ -34,7 +34,7 @@ print("line38")
 class FakeNewsDetect(Resource):
     @app.route('/')
     def index():
-        return "<h1>Welcome to our server !!</h1>"
+        return app.send_static_file('index.html')
 
     def put(self, running):
         if running != "running":
