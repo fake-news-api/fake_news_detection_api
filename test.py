@@ -26,6 +26,7 @@ for i in range(test_case):
         entry["title"] = data.title[i]
 
     response = requests.put(BASE + "running", entry)
+    print(BASE + "running")
     print(f"Expected: {['Real', 'Fake'][data.label[i]]}", response.json())
     print("")
 
